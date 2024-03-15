@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF3FB"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/top_panel_background"
+        android:elevation="15dp"
+        android:padding="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="@dimen/heightImage"
+            android:src="@drawable/person"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintTop_toTopOf="@id/topPanel"/>
+
+        <TextView
+            android:id="@+id/totalBalance"
+            style="@style/textStyleInTopPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Общий баланс"
+            app:layout_constraintEnd_toEndOf="@id/topPanel"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintTop_toTopOf="@id/topPanel" />
+
+        <TextView
+            android:id="@+id/balance"
+            style="@style/textStyleInTopPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="145 745,67$"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="@id/topPanel"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintTop_toBottomOf="@id/totalBalance" />
+
+        <TextView
+            android:id="@+id/amountPerDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="+1768,25$ (12,1%) за день"
+            android:textColor="@color/skyBlue"
+            app:layout_constraintEnd_toEndOf="@id/topPanel"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintTop_toBottomOf="@id/balance" />
+
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="60dp"
+            android:layout_height="@dimen/heightImage"
+            android:src="@drawable/plus"
+            android:padding="@dimen/indentation_inside_image"
+            android:elevation="10dp"
+            android:background="@drawable/circle_for_plus"
+            app:layout_constraintEnd_toEndOf="@id/topPanel"
+            app:layout_constraintTop_toTopOf="@id/topPanel"/>
+
+        <ImageView
+            android:id="@+id/firstPage"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:src="@drawable/first_page"
+            android:scaleX="2.5"
+            android:scaleY="2.5"
+            app:layout_constraintTop_toBottomOf="@id/amountPerDay"
+            app:layout_constraintStart_toStartOf="@id/topPanel"
+            app:layout_constraintEnd_toEndOf="@id/topPanel" />
+
+        <Button
+            android:id="@+id/assets"
+            style="@style/textStyleInTopPanel"
+            android:layout_marginLeft="30dp"
+            android:backgroundTint="#E1EAF3"
+            android:text="Активы"
+            android:textColor="@color/skyBlue"
+            app:layout_constraintBottom_toBottomOf="@id/topPanel"
+            app:layout_constraintStart_toStartOf="@id/topPanel" />
+
+        <Button
+            android:id="@+id/NTF_collections"
+            style="@style/textStyleInTopPanel"
+            android:backgroundTint="@color/white"
+            android:text="NTF коллекции"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/topPanel"
+            app:layout_constraintStart_toEndOf="@id/assets" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/middlePanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topPanel">
+
+        <ImageView
+            android:id="@+id/imageBitcoin"
+            android:layout_width="@dimen/widthImage"
+            android:layout_height="@dimen/heightImage"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bitcoin"
+            app:layout_constraintEnd_toStartOf="@id/bitcoin"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toTopOf="@id/middlePanel" />
+
+        <EditText
+            android:id="@+id/bitcoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toTopOf="@id/middlePanel" />
+
+        <TextView
+            android:id="@+id/bitcoinSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="end"
+            android:text="0,014 BTC"
+            app:layout_constraintEnd_toEndOf="@id/bitcoin"
+            app:layout_constraintTop_toTopOf="@id/bitcoin" />
+
+        <ImageView
+            android:id="@+id/imageEthereum"
+            android:layout_width="@dimen/widthImage"
+            android:layout_height="@dimen/heightImage"
+            android:layout_margin="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ethereum"
+            app:layout_constraintEnd_toStartOf="@id/ethereum"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@+id/imageBitcoin" />
+
+        <EditText
+            android:id="@+id/ethereum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@id/bitcoin" />
+
+        <TextView
+            android:id="@+id/ethereumSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="end"
+            android:text="0,052739 ETH"
+            app:layout_constraintEnd_toEndOf="@id/ethereum"
+            app:layout_constraintTop_toBottomOf="@id/bitcoin" />
+
+        <ImageView
+            android:id="@+id/imageSmartChain"
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:layout_margin="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/smart_chain"
+            app:layout_constraintEnd_toStartOf="@id/smartChain"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@+id/imageEthereum" />
+
+        <EditText
+            android:id="@+id/smartChain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@id/ethereum" />
+
+        <TextView
+            android:id="@+id/smartChainSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="end"
+            android:text="124,93463 BNB"
+            app:layout_constraintEnd_toEndOf="@id/ethereum"
+            app:layout_constraintTop_toBottomOf="@id/ethereum" />
+
+        <ImageView
+            android:id="@+id/imagePancakeSwap"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pancake_swap"
+            app:layout_constraintEnd_toStartOf="@id/pancakeSwap"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@+id/imageSmartChain" />
+
+        <EditText
+            android:id="@+id/pancakeSwap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@id/smartChain" />
+
+        <TextView
+            android:id="@+id/pancakeSwapSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="end"
+            android:text="4 382,323 CAKE"
+            app:layout_constraintEnd_toEndOf="@id/smartChain"
+            app:layout_constraintTop_toBottomOf="@id/smartChain" />
+
+        <ImageView
+            android:id="@+id/imageBinanceUSD"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/binance_usd"
+            app:layout_constraintEnd_toStartOf="@id/pancakeSwap"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@+id/imagePancakeSwap" />
+
+        <EditText
+            android:id="@+id/binanceUSD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@id/pancakeSwap" />
+
+        <TextView
+            android:id="@+id/binanceUSDSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:gravity="end"
+            android:text="8 253,32 BUSD"
+            app:layout_constraintEnd_toEndOf="@id/pancakeSwap"
+            app:layout_constraintTop_toBottomOf="@id/pancakeSwap" />
+
+        <ImageView
+            android:id="@+id/imageWiseWineToken"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wise_win_token"
+            app:layout_constraintEnd_toStartOf="@id/wiseWineToken"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@+id/imageBinanceUSD" />
+
+        <EditText
+            android:id="@+id/wiseWineToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="85dp"
+            android:background="@null"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            app:layout_constraintStart_toStartOf="@id/middlePanel"
+            app:layout_constraintTop_toBottomOf="@id/binanceUSD" />
+
+        <TextView
+            android:id="@+id/wiseWineTokenSum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="end"
+            android:text="26 954,49287345 WWT"
+            app:layout_constraintEnd_toEndOf="@id/binanceUSD"
+            app:layout_constraintTop_toBottomOf="@id/binanceUSD" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomPanel"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/middlePanel">
+
+        <RelativeLayout
+            android:id="@+id/walletPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/element_wallet"
+            android:elevation="@dimen/shadow_under_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imageWallet"
+                android:layout_width="@dimen/width_element_bottom_panel"
+                android:layout_height="@dimen/height_element_bottom_panel"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/indentation_inside_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/wallet" />
+
+            <TextView
+                android:id="@+id/wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageWallet"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/indentation_between_image_and_text"
+                android:text="Кошелек" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/marketPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentation_from_another_image"
+            android:layout_toEndOf="@id/walletPanel"
+            android:background="@drawable/for_elements_of_bottom_panel"
+            android:elevation="@dimen/shadow_under_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/walletPanel">
+
+            <ImageView
+                android:id="@+id/imageMarket"
+                android:layout_width="@dimen/width_element_bottom_panel"
+                android:layout_height="@dimen/height_element_bottom_panel"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/for_elements_of_bottom_panel"
+                android:padding="@dimen/indentation_inside_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/market" />
+
+            <TextView
+                android:id="@+id/market"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageMarket"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/indentation_between_image_and_text"
+                android:text="Рынок" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/browserPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentation_from_another_image"
+            android:layout_toEndOf="@id/marketPanel"
+            android:background="@drawable/for_elements_of_bottom_panel"
+            android:elevation="@dimen/shadow_under_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/marketPanel">
+
+            <ImageView
+                android:id="@+id/imageBrowser"
+                android:layout_width="@dimen/width_element_bottom_panel"
+                android:layout_height="@dimen/height_element_bottom_panel"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/for_elements_of_bottom_panel"
+                android:padding="@dimen/indentation_inside_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/browser" />
+
+            <TextView
+                android:id="@+id/browser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageBrowser"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/indentation_between_image_and_text"
+                android:text="Браузер" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/exchangePanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentation_from_another_image"
+            android:layout_toEndOf="@id/browserPanel"
+            android:background="@drawable/for_elements_of_bottom_panel"
+            android:elevation="@dimen/shadow_under_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/browserPanel">
+
+            <ImageView
+                android:id="@+id/imageExchange"
+                android:layout_width="@dimen/width_element_bottom_panel"
+                android:layout_height="@dimen/height_element_bottom_panel"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/for_elements_of_bottom_panel"
+                android:padding="@dimen/indentation_inside_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/exchange" />
+
+            <TextView
+                android:id="@+id/exchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageExchange"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/indentation_between_image_and_text"
+                android:text="Обмен" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/settingsPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentation_from_another_image"
+            android:layout_toEndOf="@id/exchangePanel"
+            android:background="@drawable/for_elements_of_bottom_panel"
+            android:elevation="@dimen/shadow_under_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/exchangePanel">
+
+            <ImageView
+                android:id="@+id/imageSettings"
+                android:layout_width="@dimen/width_element_bottom_panel"
+                android:layout_height="@dimen/height_element_bottom_panel"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/for_elements_of_bottom_panel"
+                android:padding="@dimen/indentation_inside_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/settings" />
+
+            <TextView
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageSettings"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="@dimen/indentation_between_image_and_text"
+                android:text="Настройки" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
